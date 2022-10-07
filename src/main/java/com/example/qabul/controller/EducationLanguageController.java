@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/api/v1/education-language")
 public class EducationLanguageController {
@@ -20,13 +22,13 @@ public class EducationLanguageController {
     }
 
     @PostMapping
-    public ResponseEntity<?> create(@RequestBody EducationLanguageDto dto) {
+    public ResponseEntity<?> create(@RequestBody @Valid EducationLanguageDto dto) {
         EducationLanguageDto result = educationLanguageService.create(dto);
         return ResponseEntity.ok(result);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") Integer id, @RequestBody EducationLanguageDto dto) {
+    public ResponseEntity<?> update(@PathVariable("id") Integer id, @RequestBody @Valid EducationLanguageDto dto) {
         boolean result = educationLanguageService.update(id, dto);
         return ResponseEntity.ok(result);
     }
