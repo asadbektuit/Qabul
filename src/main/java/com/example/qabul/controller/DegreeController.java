@@ -1,6 +1,6 @@
 package com.example.qabul.controller;
 
-import com.example.dto.DegreeDto;
+import com.example.qabul.dto.DegreeDto;
 import com.example.qabul.service.DegreeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

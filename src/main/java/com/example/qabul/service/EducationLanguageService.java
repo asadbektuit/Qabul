@@ -1,6 +1,6 @@
 package com.example.qabul.service;
 
-import com.example.dto.EducationLanguageDto;
+import com.example.qabul.dto.EducationLanguageDto;
 import org.springframework.stereotype.Service;
 
 @Service

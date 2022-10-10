@@ -1,6 +1,6 @@
 package com.example.qabul.service;
 
-import com.example.dto.OrganizationDto;
+import com.example.qabul.dto.OrganizationDto;
 import org.springframework.stereotype.Service;
 
 @Service

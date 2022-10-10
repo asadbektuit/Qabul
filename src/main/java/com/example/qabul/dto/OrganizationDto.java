@@ -1,4 +1,4 @@
-package com.example.dto;
+package com.example.qabul.dto;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,8 +7,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-public class StartingMonthDto {
-
+public class OrganizationDto {
     private Integer id;
     private String name;
     private LocalDateTime createdAt;

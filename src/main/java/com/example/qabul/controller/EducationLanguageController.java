@@ -1,6 +1,6 @@
 package com.example.qabul.controller;
 
-import com.example.dto.EducationLanguageDto;
+import com.example.qabul.dto.EducationLanguageDto;
 import com.example.qabul.service.EducationLanguageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
