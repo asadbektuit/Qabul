@@ -47,7 +47,7 @@ public class ResidentialService {
     private Residential getEntity(Integer id) {
         Optional<Residential> optional = residentialRepository.findByIdAndDeletedAtIsNull(id);
         if (optional.isEmpty()){
-            throw new BadRequest("Degree not found");
+            throw new BadRequest("Residential not found");
         }
         return optional.get();
     }

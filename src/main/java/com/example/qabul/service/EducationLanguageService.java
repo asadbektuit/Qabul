@@ -43,7 +43,7 @@ public class EducationLanguageService {
     private EducationLanguage getEntity(Integer id) {
         Optional<EducationLanguage> optional = educationLanguageRepository.findByIdAndDeletedAtIsNull(id);
         if (optional.isEmpty()){
-            throw new BadRequest("Degree not found");
+            throw new BadRequest("EducationLanguage not found");
         }
         return optional.get();
     }

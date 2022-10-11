@@ -1,25 +1,54 @@
 package com.example.qabul.service;
 
+import com.example.qabul.dto.DegreeDto;
 import com.example.qabul.dto.StudyPlaceDto;
+import com.example.qabul.entity.Degree;
+import com.example.qabul.entity.StudyPlace;
+import com.example.qabul.exception.BadRequest;
+import com.example.qabul.repository.DegreeRepository;
+import com.example.qabul.repository.StudyPlaceRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Service
 public class StudyPlaceService {
+    @Autowired
+    private StudyPlaceRepository studyPlaceRepository;
+
     public StudyPlaceDto get(Integer id) {
-        return null;
+        StudyPlace studyPlace = getEntity(id);
+        StudyPlaceDto dto = new StudyPlaceDto();
+        dto.setName(studyPlace.getName());;
+        return dto;
     }
-
-
     public StudyPlaceDto create(StudyPlaceDto dto) {
-        return null;
+        StudyPlace studyPlace = new StudyPlace();
+        studyPlace.setName(dto.getName());
+        studyPlace.setCreatedAt(LocalDateTime.now());
+        studyPlaceRepository.save(studyPlace);
+        return dto;
     }
-
-
     public boolean update(Integer id, StudyPlaceDto dto) {
-        return false;
+        StudyPlace studyPlace = getEntity(id);
+        studyPlace.setName(dto.getName());
+        studyPlace.setUpdatedAt(LocalDateTime.now());
+        studyPlaceRepository.save(studyPlace);
+        return true;
     }
-
     public boolean delete(Integer id) {
-        return false;
+        StudyPlace studyPlace = getEntity(id);
+        studyPlace.setDeletedAt(LocalDateTime.now());
+        studyPlaceRepository.save(studyPlace);
+        return true;
+    }
+    private StudyPlace getEntity(Integer id) {
+        Optional<StudyPlace> optional = studyPlaceRepository.findByIdAndDeletedAtIsNull(id);
+        if (optional.isEmpty()){
+            throw new BadRequest("StudyPlace not found");
+        }
+        return optional.get();
     }
 }

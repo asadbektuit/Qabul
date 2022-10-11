@@ -7,6 +7,6 @@ import java.util.Optional;
 public interface SportRvaURepository extends JpaRepository<SportRazryadVaUnvoni, Integer> {
 
 
-    Optional<SportRvaURepository> findByIdAndDeletedAtIsNull(Integer id);
+    Optional<SportRazryadVaUnvoni> findByIdAndDeletedAtIsNull(Integer id);
 
 }
