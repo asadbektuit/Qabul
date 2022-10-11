@@ -11,17 +11,14 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/api/v1/study-type")
 public class StudyTypeController {
-
     @Autowired
     private StudyTypeService studyTypeService;
-
 
     @GetMapping("/{id}")
     public ResponseEntity<?> get(@PathVariable("id") Integer id) {
         StudyTypeDto result = studyTypeService.get(id);
         return ResponseEntity.ok(result);
     }
-
     @PostMapping
     public ResponseEntity<?> create(@RequestBody @Valid StudyTypeDto dto) {
         StudyTypeDto result = studyTypeService.create(dto);

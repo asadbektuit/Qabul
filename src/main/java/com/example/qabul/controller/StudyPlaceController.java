@@ -11,10 +11,8 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/api/v1/study-place")
 public class StudyPlaceController {
-
     @Autowired
     private StudyPlaceService studyPlaceService;
-
     @GetMapping("/{id}")
     public ResponseEntity<?> get(@PathVariable("id") Integer id) {
         StudyPlaceDto result = studyPlaceService.get(id);
