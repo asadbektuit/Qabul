@@ -11,7 +11,6 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/api/v1/university-name")
 public class UniversityNameController {
-
     @Autowired
     private UniversityNameService universityNameService;
 
