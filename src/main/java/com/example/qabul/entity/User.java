@@ -16,7 +16,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = ("F-I-SH"))
+    @Column(name = "fish")
     private String fish;
 
     private String tel;
