@@ -26,6 +26,7 @@ public class StudyPlaceService {
     }
     public StudyPlaceDto create(StudyPlaceDto dto) {
         StudyPlace studyPlace = new StudyPlace();
+        studyPlace.setId(dto.getId());
         studyPlace.setName(dto.getName());
         studyPlace.setCreatedAt(LocalDateTime.now());
         studyPlaceRepository.save(studyPlace);

@@ -28,8 +28,11 @@ public class RetrainingCourseService {
         RetrainingCourse retrainingCourse = new RetrainingCourse();
         retrainingCourse.setName(dto.getName());
         retrainingCourse.setCreatedAt(LocalDateTime.now());
-        retrainingCourseRepository.save(retrainingCourse);
-        return dto;
+        RetrainingCourse savedRetraining = retrainingCourseRepository.save(retrainingCourse);
+        return RetrainingCourseDto.builder().id(savedRetraining.getId())
+                .createdAt(savedRetraining.getCreatedAt())
+                .name(savedRetraining.getName())
+                .updatedAt(savedRetraining.getUpdatedAt()).build();
     }
     public boolean update(Integer id, RetrainingCourseDto dto) {
         RetrainingCourse retrainingCourse = getEntity(id);
