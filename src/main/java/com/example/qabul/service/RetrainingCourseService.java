@@ -47,7 +47,7 @@ public class RetrainingCourseService {
         retrainingCourseRepository.save(retrainingCourse);
         return true;
     }
-    private RetrainingCourse getEntity(Integer id) {
+    public RetrainingCourse getEntity(Integer id) {
         Optional<RetrainingCourse> optional = retrainingCourseRepository.findByIdAndDeletedAtIsNull(id);
         if (optional.isEmpty()){
             throw new BadRequest("RetrainingCourse not found");

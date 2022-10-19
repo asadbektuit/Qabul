@@ -44,7 +44,7 @@ public class OrganizationService {
         organizationRepository.save(organization);
         return true;
     }
-    private Organization getEntity(Integer id) {
+    public Organization getEntity(Integer id) {
         Optional<Organization> optional = organizationRepository.findByIdAndDeletedAtIsNull(id);
         if (optional.isEmpty()){
             throw new BadRequest("Organization not found");

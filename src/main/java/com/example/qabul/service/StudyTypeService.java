@@ -46,7 +46,7 @@ public class StudyTypeService {
         studyTypeRepository.save(studyType);
         return true;
     }
-    private StudyType getEntity(Integer id) {
+    public StudyType getEntity(Integer id) {
         Optional<StudyType> optional = studyTypeRepository.findByIdAndDeletedAtIsNull(id);
         if (optional.isEmpty()){
             throw new BadRequest("Study type not found");

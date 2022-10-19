@@ -40,7 +40,7 @@ public class EducationLanguageService {
         educationLanguageRepository.save(educationLanguage);
         return true;
     }
-    private EducationLanguage getEntity(Integer id) {
+    public EducationLanguage getEntity(Integer id) {
         Optional<EducationLanguage> optional = educationLanguageRepository.findByIdAndDeletedAtIsNull(id);
         if (optional.isEmpty()){
             throw new BadRequest("EducationLanguage not found");

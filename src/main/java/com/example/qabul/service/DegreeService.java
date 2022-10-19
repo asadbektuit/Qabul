@@ -42,7 +42,7 @@ public class DegreeService {
         degreeRepository.save(degree);
         return true;
     }
-    private Degree getEntity(Integer id) {
+    public Degree getEntity(Integer id) {
         Optional<Degree> optional = degreeRepository.findByIdAndDeletedAtIsNull(id);
         if (optional.isEmpty()){
             throw new BadRequest("Degree not found");

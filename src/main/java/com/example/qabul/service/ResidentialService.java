@@ -44,7 +44,7 @@ public class ResidentialService {
         residentialRepository.save(residential);
         return true;
     }
-    private Residential getEntity(Integer id) {
+    public Residential getEntity(Integer id) {
         Optional<Residential> optional = residentialRepository.findByIdAndDeletedAtIsNull(id);
         if (optional.isEmpty()){
             throw new BadRequest("Residential not found");

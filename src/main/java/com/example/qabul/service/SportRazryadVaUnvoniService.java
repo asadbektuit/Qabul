@@ -44,7 +44,7 @@ public class SportRazryadVaUnvoniService {
         sportRvaURepository.save(sportRazryadVaUnvoni);
         return true;
     }
-    private SportRazryadVaUnvoni getEntity(Integer id) {
+    public SportRazryadVaUnvoni getEntity(Integer id) {
         Optional<SportRazryadVaUnvoni> optional = sportRvaURepository.findByIdAndDeletedAtIsNull(id);
         if (optional.isEmpty()){
             throw new BadRequest("SportRazryadVaUnvoni not found");

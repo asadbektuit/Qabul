@@ -44,7 +44,7 @@ public class StudyFormService {
         studyFormRepository.save(studyForm);
         return true;
     }
-    private StudyForm getEntity(Integer id) {
+    public StudyForm getEntity(Integer id) {
         Optional<StudyForm> optional = studyFormRepository.findByIdAndDeletedAtIsNull(id);
         if (optional.isEmpty()){
             throw new BadRequest("StudyForm not found");

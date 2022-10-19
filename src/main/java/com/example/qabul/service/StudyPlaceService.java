@@ -45,7 +45,7 @@ public class StudyPlaceService {
         studyPlaceRepository.save(studyPlace);
         return true;
     }
-    private StudyPlace getEntity(Integer id) {
+    public StudyPlace getEntity(Integer id) {
         Optional<StudyPlace> optional = studyPlaceRepository.findByIdAndDeletedAtIsNull(id);
         if (optional.isEmpty()){
             throw new BadRequest("StudyPlace not found");
