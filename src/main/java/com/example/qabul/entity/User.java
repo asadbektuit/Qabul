@@ -24,6 +24,10 @@ public class User {
     @Column(name = ("passport_number"))
     private String passportNumber;
 
+    private String mutaxasislik;
+
+    private String lavozim;
+
     @ManyToOne
     @JoinColumn(name = ("organization_id"), insertable = false, updatable = false)
     private Organization organization;
@@ -37,10 +41,6 @@ public class User {
 
     @Column(name = ("degree_id"))
     private Integer degreeId;
-
-    private String mutaxasislik;
-
-    private String lavozim;
 
     @ManyToOne
     @JoinColumn(name = ("sport_razryad_va_unvoni_id"), insertable = false, updatable = false)
